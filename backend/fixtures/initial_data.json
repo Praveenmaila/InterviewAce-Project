@@ -1,0 +1,574 @@
+[
+  {
+    "model": "interviews.interviewtype",
+    "pk": 1,
+    "fields": {
+      "name": "HR Interview",
+      "slug": "hr-interview",
+      "description": "Behavioral and situational questions to assess soft skills, communication, and cultural fit.",
+      "icon": "users",
+      "is_active": true,
+      "order": 1
+    }
+  },
+  {
+    "model": "interviews.interviewtype",
+    "pk": 2,
+    "fields": {
+      "name": "Technical Interview",
+      "slug": "technical-interview",
+      "description": "Technical questions to assess your coding knowledge, problem-solving, and technical expertise.",
+      "icon": "code",
+      "is_active": true,
+      "order": 2
+    }
+  },
+  {
+    "model": "interviews.domain",
+    "pk": 1,
+    "fields": {
+      "name": "React",
+      "slug": "react",
+      "description": "Frontend development with React.js, hooks, state management, and modern JavaScript.",
+      "icon": "react",
+      "color": "cyan",
+      "is_active": true,
+      "order": 1,
+      "interview_types": [2]
+    }
+  },
+  {
+    "model": "interviews.domain",
+    "pk": 2,
+    "fields": {
+      "name": "Django",
+      "slug": "django",
+      "description": "Backend development with Django, REST APIs, ORM, and Python best practices.",
+      "icon": "python",
+      "color": "green",
+      "is_active": true,
+      "order": 2,
+      "interview_types": [2]
+    }
+  },
+  {
+    "model": "interviews.domain",
+    "pk": 3,
+    "fields": {
+      "name": "Data Structures & Algorithms",
+      "slug": "dsa",
+      "description": "Core DSA concepts including arrays, trees, graphs, sorting, and complexity analysis.",
+      "icon": "binary",
+      "color": "purple",
+      "is_active": true,
+      "order": 3,
+      "interview_types": [2]
+    }
+  },
+  {
+    "model": "interviews.domain",
+    "pk": 4,
+    "fields": {
+      "name": "Java",
+      "slug": "java",
+      "description": "Java programming, OOP concepts, multithreading, and Spring framework.",
+      "icon": "coffee",
+      "color": "orange",
+      "is_active": true,
+      "order": 4,
+      "interview_types": [2]
+    }
+  },
+  {
+    "model": "interviews.domain",
+    "pk": 5,
+    "fields": {
+      "name": "Python",
+      "slug": "python",
+      "description": "Python programming, data structures, libraries, and Pythonic best practices.",
+      "icon": "python",
+      "color": "yellow",
+      "is_active": true,
+      "order": 5,
+      "interview_types": [2]
+    }
+  },
+  {
+    "model": "interviews.domain",
+    "pk": 6,
+    "fields": {
+      "name": "System Design",
+      "slug": "system-design",
+      "description": "Design scalable systems, microservices architecture, and distributed systems.",
+      "icon": "server",
+      "color": "blue",
+      "is_active": true,
+      "order": 6,
+      "interview_types": [2]
+    }
+  },
+  {
+    "model": "interviews.domain",
+    "pk": 7,
+    "fields": {
+      "name": "General HR",
+      "slug": "general-hr",
+      "description": "General behavioral and situational interview questions.",
+      "icon": "briefcase",
+      "color": "gray",
+      "is_active": true,
+      "order": 1,
+      "interview_types": [1]
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 1,
+    "fields": {
+      "interview_type": 1,
+      "domain": 7,
+      "text": "Tell me about yourself and your background.",
+      "difficulty": "easy",
+      "expected_keywords": ["experience", "education", "skills", "goals", "passion"],
+      "sample_answer": "I am a software developer with 2 years of experience in full-stack development. I graduated with a Computer Science degree and have been working with React and Django. I'm passionate about building user-centric applications and am looking to grow in a challenging environment where I can contribute meaningfully.",
+      "explanation": "This question assesses your ability to present yourself concisely. Focus on relevant experience, education, and career goals.",
+      "hints": ["Keep it under 2 minutes", "Focus on professional background", "End with why you're interested in this role"],
+      "follow_up_questions": ["What made you choose this career path?", "What's your greatest professional achievement?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 2,
+    "fields": {
+      "interview_type": 1,
+      "domain": 7,
+      "text": "What are your greatest strengths and how do they help you in your work?",
+      "difficulty": "easy",
+      "expected_keywords": ["strength", "problem-solving", "communication", "teamwork", "example", "result"],
+      "sample_answer": "One of my greatest strengths is problem-solving. When faced with complex bugs or architecture decisions, I break down the problem systematically and research multiple solutions before implementing. For example, in my last project, I identified a performance bottleneck and optimized the database queries, reducing load time by 40%.",
+      "explanation": "Demonstrate self-awareness and back up your claims with specific examples.",
+      "hints": ["Choose strengths relevant to the role", "Provide concrete examples", "Quantify results when possible"],
+      "follow_up_questions": ["Can you give another example?", "How do you continue developing this strength?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 3,
+    "fields": {
+      "interview_type": 1,
+      "domain": 7,
+      "text": "Describe a challenging project you worked on and how you overcame the obstacles.",
+      "difficulty": "medium",
+      "expected_keywords": ["challenge", "problem", "solution", "team", "result", "learned", "approach"],
+      "sample_answer": "In my previous role, I was tasked with migrating a legacy system to a modern stack within a tight deadline. The challenge was understanding the undocumented codebase while ensuring zero downtime. I created a detailed migration plan, set up parallel systems for testing, and worked closely with stakeholders to prioritize features. We successfully completed the migration on time with no service disruption.",
+      "explanation": "Use the STAR method: Situation, Task, Action, Result",
+      "hints": ["Use STAR method", "Focus on your specific contributions", "Highlight what you learned"],
+      "follow_up_questions": ["What would you do differently?", "How did this experience change your approach?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 4,
+    "fields": {
+      "interview_type": 1,
+      "domain": 7,
+      "text": "Where do you see yourself in 5 years?",
+      "difficulty": "easy",
+      "expected_keywords": ["growth", "skills", "leadership", "expertise", "contribute", "learn"],
+      "sample_answer": "In 5 years, I see myself as a senior developer or technical lead with deep expertise in full-stack development. I want to mentor junior developers and contribute to architectural decisions. I'm excited about growing with a company that values continuous learning and provides opportunities for advancement.",
+      "explanation": "Show ambition while being realistic. Align your goals with potential growth at the company.",
+      "hints": ["Show ambition but be realistic", "Align with company growth", "Mention skills you want to develop"],
+      "follow_up_questions": ["What steps are you taking toward this goal?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 5,
+    "fields": {
+      "interview_type": 1,
+      "domain": 7,
+      "text": "How do you handle conflict with team members or disagreements about technical decisions?",
+      "difficulty": "medium",
+      "expected_keywords": ["communication", "listen", "understand", "compromise", "solution", "respect", "professional"],
+      "sample_answer": "I believe in open communication and focusing on the problem rather than personalities. When I disagree with a technical decision, I first try to understand the other person's perspective by asking clarifying questions. Then I present my viewpoint with data or examples. If we can't reach consensus, I'm open to trying both approaches on a small scale or deferring to someone with more context.",
+      "explanation": "Demonstrate emotional intelligence and professional approach to conflicts.",
+      "hints": ["Show you can disagree respectfully", "Focus on finding solutions", "Give a specific example"],
+      "follow_up_questions": ["Tell me about a specific time this happened"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 6,
+    "fields": {
+      "interview_type": 2,
+      "domain": 1,
+      "text": "Explain the difference between state and props in React. When would you use each?",
+      "difficulty": "easy",
+      "expected_keywords": ["state", "props", "component", "immutable", "parent", "child", "re-render", "useState"],
+      "sample_answer": "Props are read-only data passed from parent to child components. They are immutable within the receiving component. State, on the other hand, is mutable data managed within a component using useState or useReducer hooks. You use props to pass data down the component tree and state to manage data that changes over time within a component, like form inputs or toggle states.",
+      "explanation": "This tests fundamental React concepts that every developer should understand.",
+      "hints": ["Think about data flow", "Consider mutability", "Give examples of each"],
+      "follow_up_questions": ["What happens when props change?", "How do you lift state up?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 7,
+    "fields": {
+      "interview_type": 2,
+      "domain": 1,
+      "text": "What are React hooks? Explain useEffect and when you would use it.",
+      "difficulty": "medium",
+      "expected_keywords": ["hooks", "useEffect", "side effects", "lifecycle", "dependency array", "cleanup", "fetch", "subscription"],
+      "sample_answer": "Hooks are functions that let you use state and other React features in functional components. useEffect is used for side effects like data fetching, subscriptions, or DOM manipulation. It runs after render and can optionally clean up. The dependency array controls when it re-runs - empty array means run once on mount, no array means run every render, and specific dependencies mean run when those values change.",
+      "explanation": "Understanding hooks is essential for modern React development.",
+      "hints": ["Explain the dependency array", "Mention cleanup function", "Give practical examples"],
+      "follow_up_questions": ["What's the cleanup function for?", "How do you avoid infinite loops?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 8,
+    "fields": {
+      "interview_type": 2,
+      "domain": 1,
+      "text": "Explain the Virtual DOM and how React uses it to optimize rendering.",
+      "difficulty": "medium",
+      "expected_keywords": ["virtual DOM", "reconciliation", "diffing", "performance", "batch", "real DOM", "updates"],
+      "sample_answer": "The Virtual DOM is a lightweight JavaScript representation of the actual DOM. When state changes, React creates a new Virtual DOM tree and compares it with the previous one using a diffing algorithm. It then calculates the minimum number of changes needed and batches them to update the real DOM efficiently. This process, called reconciliation, makes React updates faster because direct DOM manipulation is expensive.",
+      "explanation": "Understanding the Virtual DOM helps developers write more performant React code.",
+      "hints": ["Compare with direct DOM manipulation", "Explain reconciliation", "Mention batching"],
+      "follow_up_questions": ["How can you optimize re-renders?", "What is React.memo for?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 9,
+    "fields": {
+      "interview_type": 2,
+      "domain": 2,
+      "text": "Explain Django's MTV architecture and how it differs from MVC.",
+      "difficulty": "easy",
+      "expected_keywords": ["model", "template", "view", "MVC", "controller", "URL", "ORM"],
+      "sample_answer": "Django uses MTV (Model-Template-View) architecture. The Model handles data and database interactions through Django's ORM. The Template handles presentation/HTML. The View contains business logic and processes requests, returning responses. It differs from traditional MVC where the Controller handles user input - in Django, the framework itself acts as the controller through URL routing, and Views handle what Controllers would in MVC.",
+      "explanation": "Understanding Django's architecture is fundamental for any Django developer.",
+      "hints": ["Compare each component to MVC", "Explain the role of URL routing", "Mention the framework's role"],
+      "follow_up_questions": ["What is Django ORM?", "How does URL routing work?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 10,
+    "fields": {
+      "interview_type": 2,
+      "domain": 2,
+      "text": "What is Django REST Framework and why would you use it?",
+      "difficulty": "easy",
+      "expected_keywords": ["REST", "API", "serializers", "viewsets", "authentication", "permissions", "browsable API"],
+      "sample_answer": "Django REST Framework (DRF) is a powerful toolkit for building Web APIs with Django. It provides serializers for converting complex data types to JSON, viewsets and routers for quickly building CRUD APIs, built-in authentication and permission classes, throttling, pagination, and a browsable API for testing. You'd use it when building backend APIs for mobile apps or single-page applications.",
+      "explanation": "DRF is the standard for building APIs with Django.",
+      "hints": ["Mention key features", "Explain serializers", "Give use cases"],
+      "follow_up_questions": ["What are serializers?", "How do you handle authentication in DRF?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 11,
+    "fields": {
+      "interview_type": 2,
+      "domain": 2,
+      "text": "How do you handle database migrations in Django? What happens when you run makemigrations and migrate?",
+      "difficulty": "medium",
+      "expected_keywords": ["makemigrations", "migrate", "migration files", "schema", "version control", "database", "models"],
+      "sample_answer": "Django migrations track changes to your models and translate them to database schema changes. When you run makemigrations, Django compares your current models with previous migration files and generates new migration files describing the changes. When you run migrate, Django applies these migration files to your database in order, creating or modifying tables. Migrations are version-controlled, allowing team collaboration and rollbacks.",
+      "explanation": "Understanding migrations is crucial for managing database schemas in Django projects.",
+      "hints": ["Explain both commands", "Mention version control benefits", "Discuss team collaboration"],
+      "follow_up_questions": ["How do you rollback a migration?", "What are data migrations?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 12,
+    "fields": {
+      "interview_type": 2,
+      "domain": 3,
+      "text": "Explain the difference between Array and LinkedList. When would you choose one over the other?",
+      "difficulty": "easy",
+      "expected_keywords": ["array", "linked list", "memory", "access", "insertion", "deletion", "index", "pointer"],
+      "sample_answer": "Arrays store elements in contiguous memory locations, providing O(1) random access by index. However, insertion and deletion in the middle require O(n) time due to shifting. Linked Lists store elements with pointers to the next node, making insertion and deletion O(1) if you have the reference, but access is O(n). Choose arrays when you need frequent random access and know the size. Choose linked lists for frequent insertions/deletions and when size varies significantly.",
+      "explanation": "This is a fundamental data structure comparison question.",
+      "hints": ["Compare time complexities", "Discuss memory allocation", "Give practical scenarios"],
+      "follow_up_questions": ["What about dynamic arrays?", "What is a doubly linked list?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 13,
+    "fields": {
+      "interview_type": 2,
+      "domain": 3,
+      "text": "What is the time complexity of common sorting algorithms? Which would you choose for different scenarios?",
+      "difficulty": "medium",
+      "expected_keywords": ["bubble sort", "merge sort", "quick sort", "O(n log n)", "O(n^2)", "stable", "in-place", "comparison"],
+      "sample_answer": "Bubble Sort is O(n²) - simple but inefficient, good for educational purposes only. Merge Sort is O(n log n) always, stable, but uses O(n) extra space. Quick Sort is O(n log n) average but O(n²) worst case, in-place, and generally fastest in practice. For most cases, I'd use Quick Sort or the language's built-in sort. For stability requirements, I'd use Merge Sort. For small or nearly sorted data, Insertion Sort (O(n²) but efficient for small n).",
+      "explanation": "Understanding sorting algorithms helps in choosing the right tool for the job.",
+      "hints": ["Know the complexities", "Explain trade-offs", "Consider stability and space"],
+      "follow_up_questions": ["What makes a sort stable?", "Explain Quicksort's partitioning"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 14,
+    "fields": {
+      "interview_type": 2,
+      "domain": 3,
+      "text": "Explain Big O notation and why it matters in software development.",
+      "difficulty": "easy",
+      "expected_keywords": ["Big O", "time complexity", "space complexity", "scalability", "worst case", "algorithm", "efficiency"],
+      "sample_answer": "Big O notation describes how an algorithm's performance scales with input size, focusing on the worst case. For example, O(1) is constant time (hash table lookup), O(log n) is logarithmic (binary search), O(n) is linear (array traversal), and O(n²) is quadratic (nested loops). It matters because as data grows, inefficient algorithms become unusable. A O(n²) solution might work for 100 items but fail for 1 million.",
+      "explanation": "Big O is fundamental to writing scalable code.",
+      "hints": ["Give common examples", "Explain why it focuses on worst case", "Discuss practical implications"],
+      "follow_up_questions": ["What's the difference between time and space complexity?", "How do you analyze nested loops?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 15,
+    "fields": {
+      "interview_type": 2,
+      "domain": 4,
+      "text": "Explain the four pillars of Object-Oriented Programming with Java examples.",
+      "difficulty": "easy",
+      "expected_keywords": ["encapsulation", "inheritance", "polymorphism", "abstraction", "class", "interface", "extends", "override"],
+      "sample_answer": "The four pillars are: 1) Encapsulation - bundling data and methods, using private fields with getters/setters. 2) Inheritance - creating new classes from existing ones using 'extends', promoting code reuse. 3) Polymorphism - same method name with different implementations, like overriding parent methods or implementing interfaces. 4) Abstraction - hiding complexity using abstract classes and interfaces, showing only essential features.",
+      "explanation": "OOP fundamentals are essential for any Java developer.",
+      "hints": ["Give concrete Java examples", "Explain benefits of each", "Show how they work together"],
+      "follow_up_questions": ["What's the difference between interface and abstract class?", "Give an example of polymorphism"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 16,
+    "fields": {
+      "interview_type": 2,
+      "domain": 4,
+      "text": "What is the difference between ArrayList and LinkedList in Java? When would you use each?",
+      "difficulty": "medium",
+      "expected_keywords": ["ArrayList", "LinkedList", "random access", "insertion", "deletion", "List interface", "implementation"],
+      "sample_answer": "Both implement the List interface but differ internally. ArrayList uses a dynamic array, providing O(1) random access but O(n) insertions/deletions in the middle. LinkedList uses doubly-linked nodes, providing O(1) insertions/deletions if you have the reference but O(n) random access. Use ArrayList for most cases, especially when accessing elements frequently. Use LinkedList when you frequently add/remove from the beginning/middle or use it as a queue/deque.",
+      "explanation": "Understanding collection implementations helps choose the right one for your use case.",
+      "hints": ["Compare internal structures", "Discuss time complexities", "Give practical scenarios"],
+      "follow_up_questions": ["What about Vector?", "How does ArrayList grow?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 17,
+    "fields": {
+      "interview_type": 2,
+      "domain": 5,
+      "text": "What are Python decorators and how do they work? Give a practical example.",
+      "difficulty": "medium",
+      "expected_keywords": ["decorator", "wrapper", "function", "@", "higher-order", "closure", "args", "kwargs"],
+      "sample_answer": "Decorators are functions that modify the behavior of other functions without changing their code. They take a function as input, wrap it with additional functionality, and return the wrapped function. The @ syntax is syntactic sugar for applying decorators. A practical example is a timing decorator that measures function execution time, or @login_required that checks user authentication before allowing access to a view function.",
+      "explanation": "Decorators are a powerful Python feature used extensively in frameworks.",
+      "hints": ["Explain the concept of wrapping", "Show the @ syntax", "Give real-world examples"],
+      "follow_up_questions": ["How do you pass arguments to decorators?", "What are class decorators?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 18,
+    "fields": {
+      "interview_type": 2,
+      "domain": 5,
+      "text": "Explain the difference between a list, tuple, set, and dictionary in Python.",
+      "difficulty": "easy",
+      "expected_keywords": ["list", "tuple", "set", "dictionary", "mutable", "immutable", "ordered", "key-value", "unique"],
+      "sample_answer": "Lists are ordered, mutable collections that allow duplicates - use when you need a dynamic collection. Tuples are ordered but immutable - use for fixed collections or as dictionary keys. Sets are unordered collections of unique elements - use for membership testing or removing duplicates. Dictionaries are key-value pairs with unique keys - use for fast lookups by key. Lists/tuples are O(n) for lookup, sets/dicts are O(1) on average.",
+      "explanation": "Understanding Python's built-in data structures is fundamental.",
+      "hints": ["Compare mutability", "Discuss ordering", "Mention use cases and performance"],
+      "follow_up_questions": ["What is a frozenset?", "How are dictionaries implemented?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 19,
+    "fields": {
+      "interview_type": 2,
+      "domain": 6,
+      "text": "How would you design a URL shortening service like bit.ly?",
+      "difficulty": "hard",
+      "expected_keywords": ["hash", "database", "cache", "redirect", "unique ID", "base62", "scalability", "analytics"],
+      "sample_answer": "I'd design it with these components: 1) API layer to accept long URLs and return short codes. 2) ID generator using a counter or random base62 string for uniqueness. 3) Database to store mappings (NoSQL like DynamoDB for scale). 4) Cache layer (Redis) for hot URLs. 5) Redirect service that looks up and 301 redirects. For scalability: horizontal scaling with load balancers, database sharding by hash, and CDN for global performance. Consider adding analytics tracking.",
+      "explanation": "This tests your ability to think about system components and scalability.",
+      "hints": ["Think about the main components", "Consider scalability", "Discuss trade-offs"],
+      "follow_up_questions": ["How do you handle collisions?", "How would you shard the database?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 20,
+    "fields": {
+      "interview_type": 2,
+      "domain": 6,
+      "text": "Explain the differences between SQL and NoSQL databases. When would you choose each?",
+      "difficulty": "medium",
+      "expected_keywords": ["SQL", "NoSQL", "relational", "schema", "ACID", "scalability", "document", "key-value", "consistency"],
+      "sample_answer": "SQL databases are relational with fixed schemas, ACID compliance, and powerful querying with JOINs. Good for complex relationships and transactions (banking, e-commerce orders). NoSQL databases are non-relational with flexible schemas with different models (document, key-value, graph). Better for horizontal scaling, high write loads, and evolving data structures. Choose SQL when you need transactions and complex queries. Choose NoSQL for scale, flexibility, and simpler access patterns.",
+      "explanation": "Understanding database trade-offs is crucial for system design.",
+      "hints": ["Compare data models", "Discuss consistency vs scalability", "Give specific use cases"],
+      "follow_up_questions": ["What is CAP theorem?", "What is eventual consistency?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 21,
+    "fields": {
+      "interview_type": 1,
+      "domain": 7,
+      "text": "Why do you want to work for our company?",
+      "difficulty": "easy",
+      "expected_keywords": ["company", "values", "growth", "culture", "mission", "opportunity", "skills", "contribute"],
+      "sample_answer": "I've researched your company and am impressed by your commitment to innovation and your culture of continuous learning. Your recent work on [specific product/project] aligns with my interests in building impactful solutions. I believe my skills in full-stack development would contribute to your team while I continue to grow professionally. The opportunity to work with experienced developers and tackle challenging problems is exactly what I'm looking for.",
+      "explanation": "Show that you've done research and have genuine interest in the company.",
+      "hints": ["Research the company beforehand", "Be specific about what attracts you", "Connect it to your career goals"],
+      "follow_up_questions": ["What do you know about our products?", "What would you change about our product?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 22,
+    "fields": {
+      "interview_type": 1,
+      "domain": 7,
+      "text": "Describe a time when you had to learn a new technology quickly. How did you approach it?",
+      "difficulty": "medium",
+      "expected_keywords": ["learn", "approach", "resources", "practice", "project", "documentation", "time", "result"],
+      "sample_answer": "In my previous project, I needed to learn Docker within two weeks for containerizing our application. I started with official documentation, then followed a structured online course. I practiced by containerizing a simple project first, then gradually applied it to our actual codebase. I also joined Docker communities to ask questions. Within the timeframe, I successfully containerized our application and even created documentation for the team.",
+      "explanation": "This assesses your learning ability and self-direction.",
+      "hints": ["Use STAR method", "Show your learning strategy", "Mention the outcome"],
+      "follow_up_questions": ["What resources do you prefer for learning?", "How do you stay updated with technology?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 23,
+    "fields": {
+      "interview_type": 2,
+      "domain": 1,
+      "text": "What is React Context API and when would you use it over Redux?",
+      "difficulty": "medium",
+      "expected_keywords": ["Context", "Provider", "Consumer", "useContext", "global state", "Redux", "prop drilling", "performance"],
+      "sample_answer": "Context API is React's built-in way to share state across components without prop drilling. You create a context, wrap components with a Provider, and consume using useContext hook. Use Context for simpler global state like themes, user authentication, or language settings. Use Redux when you need complex state logic, middleware for side effects, time-travel debugging, or when you have deeply nested state updates. Context can cause unnecessary re-renders for frequently changing data.",
+      "explanation": "Understanding state management options helps choose the right tool.",
+      "hints": ["Explain when each is appropriate", "Mention performance considerations", "Give specific use cases"],
+      "follow_up_questions": ["How do you optimize Context performance?", "What about Zustand or Recoil?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 24,
+    "fields": {
+      "interview_type": 2,
+      "domain": 2,
+      "text": "Explain Django middleware and give an example of a custom middleware use case.",
+      "difficulty": "hard",
+      "expected_keywords": ["middleware", "request", "response", "process", "authentication", "logging", "CORS", "hook"],
+      "sample_answer": "Middleware are hooks that process requests and responses globally before reaching views or after leaving them. They're executed in order for requests and reverse order for responses. Each middleware can modify the request, return a response early, or modify the response. A custom middleware example: request logging middleware that logs every request's path, user, and timestamp to a database for analytics. Another example: custom authentication that checks API keys in headers.",
+      "explanation": "Understanding middleware is important for Django internals.",
+      "hints": ["Explain the request/response cycle", "Give practical examples", "Mention order of execution"],
+      "follow_up_questions": ["How does CORS middleware work?", "What's the order of middleware execution?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "interviews.question",
+    "pk": 25,
+    "fields": {
+      "interview_type": 2,
+      "domain": 3,
+      "text": "Explain how a HashMap works internally. What happens during collisions?",
+      "difficulty": "hard",
+      "expected_keywords": ["hash function", "bucket", "collision", "chaining", "probe", "load factor", "rehashing", "O(1)"],
+      "sample_answer": "A HashMap uses an array of buckets. When inserting, it computes a hash of the key, converts to an index using modulo, and stores the key-value pair in that bucket. Collisions occur when different keys hash to the same index. Common resolution methods: 1) Chaining - each bucket holds a linked list of entries, 2) Open addressing - probe for the next empty slot. Load factor (entries/capacity) triggers resizing. Average operations are O(1), but O(n) worst case with many collisions.",
+      "explanation": "Understanding hash table internals is common in technical interviews.",
+      "hints": ["Explain the hashing process", "Describe collision handling", "Mention when it becomes O(n)"],
+      "follow_up_questions": ["What's a good hash function?", "How does resizing work?"],
+      "times_asked": 0,
+      "avg_score": 0.0,
+      "is_active": true
+    }
+  }
+]
